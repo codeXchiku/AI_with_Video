@@ -1,5 +1,7 @@
+'use client'
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 const RegisterPage = () => {
     const [email, setEmail] = useState("")
@@ -43,25 +45,25 @@ const RegisterPage = () => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email</label>
-                    <input 
-                    name="email"
-                     type="email"
-                     value={email}
-                     onChange={(e)=>setEmail(e.target.value)} />
+                    <input
+                        name="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
                 </div>
 
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input name="password" type="password" 
-                    value={password}
-                    onChange={(e)=>setPassword(e.target.value)} />
+                    <input name="password" type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
                 <div>
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input name="confirmPassword" type="password" 
-                    value={confirmPassword}
-                    onChange={(e)=>setConfirmPassword(e.target.value)} />
+                    <input name="confirmPassword" type="password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
 
                 <div>
@@ -70,7 +72,9 @@ const RegisterPage = () => {
             </form>
 
             <div>
-                <p>If you already registered then <a href="/login">click here</a></p>
+                <p>
+                    If you already registered then <Link href="/login">click here</Link>
+                </p>
             </div>
 
         </div>
